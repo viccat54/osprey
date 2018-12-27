@@ -8,9 +8,11 @@
 {{ if .IsHome }}
   <header class="row middle-xs center-xs">
     <div class="col-xs-12">
+      {{ if .Site.Params.logoBig }}
       <div class="row middle-xs center-xs">
         <div class="col-xs-12"><img src="{{ .Site.Params.logoBig}}" alt="{{ .Site.Title }}"></div>
       </div>
+      {{ end }}
       <div class="row middle-xs center-xs">
         <div class="col-xs-12">
           <h1>{{ .Site.Params.tagline }}<span class="cursor">|</span></h1>
@@ -22,7 +24,9 @@
 
 <nav class="row middle-xs center-xs">
   <div class="col-xs-6 col-sm-1 logo">
+    {{ if .Site.Params.logoSmall }}
     <a href="{{ .Site.BaseURL }}#"><img src="{{ .Site.Params.logoSmall }}" alt="{{ .Site.Title }}"></a>
+    {{ end }}
   </div>
     {{ range .Site.Menus.main }}
       <div class="col-xs-3 col-sm-2">
